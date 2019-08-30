@@ -74,4 +74,4 @@ if __name__ == "__main__":
     my_linked_list = DoublyLinked()
     print("len(my_linked_list) = ", len(my_linked_list))
     print("my_linked_list = ", repr(my_linked_list))
-    print("my_linked_list.is_emty() ? = ", my_linked_list.is_empty())
+    print("my_linked_list.is_empty() ? = ", my_linked_list.is_empty())
