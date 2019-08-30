@@ -48,7 +48,7 @@ class DoublyLinked(object):
         node = self._header._next
         for i in range(self._size):
             items.append(node._element)
-            node = self.__getnext__(node)
+            node = node._next
         return str(items)
 
     def __getitem__(self, index):
@@ -62,23 +62,13 @@ class DoublyLinked(object):
             # access frontend elements
             node = self._header
             for i in range(index+1):
-                node = self.__getnext__(node)
+                node = node._next
         else:
             # access backend elements
             node = self._trailer
             for i in range(index+1):
-                node = self.__getprev__(node)
+                node = node._prev
         return node._element
-
-    def __getnext__(self, node):
-        """return the next node in the linked list
-        """
-        return node._next
-
-    def __getprev__(self, node):
-        """return the prev node in the linked list
-        """
-        return node._prev
 
 if __name__ == "__main__":
     my_linked_list = DoublyLinked()

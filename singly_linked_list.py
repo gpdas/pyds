@@ -45,7 +45,7 @@ class SinglyLinked(object):
             if i == 0:
                 node = self._head
             items.append(node._element)
-            node = self.__getnext__(node)
+            node = node._next
         return str(items)
 
     def __getitem__(self, index):
@@ -56,13 +56,8 @@ class SinglyLinked(object):
             raise Exception("Index out of range")
         node = self._head
         for i in range(index):
-            node = self.__getnext__(node)
+            node = node._next
         return node._element
-
-    def __getnext__(self, node):
-        """return the next node in the linked list
-        """
-        return node._next
 
 if __name__ == "__main__":
     my_linked_list = SinglyLinked()
