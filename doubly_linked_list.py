@@ -66,7 +66,7 @@ class DoublyLinked(object):
         else:
             # access backend elements
             node = self._trailer
-            for i in range(index+1):
+            for i in range(self._size - index):
                 node = node._prev
         return node._element
 
